@@ -1,0 +1,141 @@
+@use '@/scss/variables.scss' as *;
+@use '@/scss/mixins.scss' as *;
+
+.stats {
+  padding: 48px 4px;
+
+  @include respond(tablet) {
+    padding: 96px 14px;
+  }
+
+  @include respond(laptop) {
+    padding: 96px 110px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 64px;
+
+    @include respond(tablet) {
+      gap: 0;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(laptop) {
+      gap: 128px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @include respond(tablet) {
+      align-items: flex-start;
+      gap: 28px;
+    }
+
+    @include respond(laptop) {
+      gap: 56px;
+    }
+
+    span,
+    p {
+      color: $primary;
+    }
+
+    span {
+      font-size: 84px;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+
+      @include respond(tablet) {
+        font-size: 120px;
+      }
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1.09;
+      letter-spacing: -0.05em;
+    }
+  }
+}
+
+.services {
+  padding: 64px 4px;
+  background-color: $bg-dark-green;
+
+  @include respond(tablet) {
+    padding: 114px 14px;
+  }
+
+  @include respond(laptop) {
+    padding: 114px 100px;
+  }
+
+  h2,
+  h3,
+  p {
+    color: $white;
+  }
+
+  h2 {
+    max-width: 548px;
+    width: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include respond(tablet) {
+      gap: 80px;
+    }
+
+    @include respond(laptop) {
+      gap: 170px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $white;
+
+    @include respond(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(laptop) {
+      gap: 170px;
+    }
+
+    &__item {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100%;
+      gap: 24px;
+      padding: 20px 0;
+      border-top: 1px solid $white;
+
+      @include respond(laptop) {
+        grid-template-columns: 3fr 2fr;
+      }
+
+      p {
+        white-space: pre-line;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}

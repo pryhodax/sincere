@@ -1,0 +1,50 @@
+@use 'sass:color';
+@use '@/scss/variables.scss' as *;
+
+.header {
+  padding: 20px 0;
+  background-color: $bg-dark-green;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &.scrolled {
+    background-color: color.adjust($bg-dark-green, $lightness: -2.5%);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    width: 33px;
+    height: 24px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        fill: $text-muted;
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+
+    a {
+      color: $text-muted;
+    }
+  }
+}

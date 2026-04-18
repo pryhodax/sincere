@@ -1,0 +1,213 @@
+@use 'sass:color';
+@use '@/scss/variables.scss' as *;
+@use '@/scss/mixins.scss' as *;
+
+.welcome {
+  background-color: $bg-light;
+  padding: 48px 0 80px;
+
+  @include respond(tablet) {
+    padding: 135px 14px 178px;
+  }
+
+  @include respond(laptop) {
+    padding: 135px 102px 178px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  a {
+    width: 100%;
+
+    @include respond(tablet) {
+      width: max-content;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include respond(tablet) {
+      gap: 60px;
+    }
+
+    &__info {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      align-items: start;
+      gap: 24px;
+
+      @include respond(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+      }
+
+      p {
+        max-width: 447px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.offer {
+  background-color: $bg-dark-green;
+  padding: 64px 4px;
+
+  @include respond(tablet) {
+    padding: 93px 14px 126px;
+  }
+
+  @include respond(laptop) {
+    padding: 93px 102px 126px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+
+    @include respond(laptop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+
+      p:last-child {
+        color: rgba($accent-warm, 0.5);
+      }
+    }
+  }
+
+  h1 {
+    white-space: nowrap;
+  }
+
+  h1,
+  p {
+    color: $text-light;
+  }
+}
+
+.reviews {
+  max-width: 738px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px 0 80px;
+
+  @include respond(tablet) {
+    padding: 116px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+
+    @include respond(tablet) {
+      gap: 74px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+
+    @include respond(tablet) {
+      gap: 56px;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+
+      p {
+        max-width: 480px;
+        width: 100%;
+      }
+    }
+
+    &__swiper {
+      padding: 30px 50px;
+      background-color: $neutral-light;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 80px;
+
+      @include respond(tablet) {
+        padding: 32px 50px;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        h1 {
+          text-align: center;
+        }
+      }
+
+      &__controls {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        button {
+          width: 24px;
+          height: 24px;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__dots {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          span {
+            width: 11px;
+            height: 11px;
+            border-radius: 100%;
+            background-color: rgba($black, 0.25);
+            cursor: pointer;
+
+            &.active {
+              background-color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

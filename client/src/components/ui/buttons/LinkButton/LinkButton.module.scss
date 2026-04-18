@@ -1,0 +1,32 @@
+@use 'sass:color';
+@use '@/scss/variables.scss' as *;
+
+.button {
+  display: block;
+  border-radius: 500px;
+  padding: 18px 24px;
+  transition: all 0.25s ease-in-out;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  width: max-content;
+  text-align: center;
+
+  &__primary {
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      background-color: color.adjust($primary, $lightness: 10%);
+    }
+  }
+
+  &__secondary {
+    background-color: $white;
+    color: $black;
+
+    &:hover {
+      background-color: color.adjust($white, $lightness: -20%);
+    }
+  }
+}
