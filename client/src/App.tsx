@@ -10,7 +10,7 @@ import ConsultPage from './pages/Consult';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/sincere">
       <Routes>
         <Route element={<PrimaryLayout />}>
           <Route path="/" element={<HomePage />} />
